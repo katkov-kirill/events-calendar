@@ -8,6 +8,7 @@ import {
 } from "@web/components/components";
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { Event } from "@web/common/types/types";
+import Comments from "@web/components/comments/comments";
 
 const EventDetail: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   event,
@@ -34,6 +35,7 @@ const EventDetail: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId={event.id} />
     </>
   );
 };

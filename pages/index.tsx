@@ -1,6 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { EventList, PageHead } from "@web/components/components";
 import { getFeaturedEvents } from "@web/helpers/api-helper";
+import NewsletterRegistration from "@web/components/newsletter-registration/newsletter-registration";
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   items,
@@ -8,6 +9,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <div>
       <PageHead title="Events Calendar" />
+      <NewsletterRegistration />
       <EventList items={items} />
     </div>
   );
