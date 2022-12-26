@@ -26,6 +26,7 @@ const getAllDocuments = async <T extends Document>(
   const db = client.db();
   const docs = (await db
     .collection<T>(collection)
+    //@ts-ignore
     .find({ eventId })
     .sort({ _id: -1 })
     .toArray()) as T[];
